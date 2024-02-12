@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Dashboard</title>
+    <style>
+        /* Style the container to appear like a table */
+        .container {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        /* Style the row to appear like a table row */
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Style the headings to appear like table headers */
+        .heading {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Item Dashboard</h1>
+    <div class="container">
+        <!-- Heading Row -->
+        <div class="row heading">
+            <div>SKU</div>
+            <div>Name</div>
+            <div>Category</div>
+            <div>Stock Status</div>
+            <div>Available Stock</div>
+        </div>
+        <!-- Item Rows -->
+        {% for item in items %}
+        <div class="row">
+            <div>{{ item.sku }}</div>
+            <div>{{ item.name }}</div>
+            <div>{{ item.category }}</div>
+            <div>{{ item.stock_status }}</div>
+            <div>{{ item.available_stock }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

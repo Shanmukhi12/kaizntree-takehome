@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <img src="{% static 'images/logo.png' %}" alt="Logo" style="width: 200px; height: auto; margin-left:540px; margin-top:20px;"/>
+
+
+</head>
+<body>
+
+<div style="text-align: center; margin-top: 50px;">
+    <form method="post" action="/signin">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" style="width: 20%;" Required>
+        </div>
+
+        <br>
+        <br>
+        <div class="form-group">
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Password" style="width:20%;" Required>
+        </div>
+        <div style="margin-top: 23px; margin-left: 200px">
+            <button type="submit" class="btn btn-primary">LOG IN</button>
+        </div>
+
+    </form>
+</div>
+<div style="margin-left: 500px;">
+  <form action="/signup" method="get" style = "position: absolute; top: 220px;">
+    <button type="submit" class="btn btn-primary">
+      CREATE ACCOUNT
+    </button>
+  </form>
+</div>
+<br>
+<a href="/signup" style = "margin-left: 500px;">Forgot Password</a>
+
+
+</body>
+</html>
